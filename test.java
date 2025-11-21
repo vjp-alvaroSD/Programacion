@@ -5,29 +5,19 @@
 
 /**
  *
- * @author Álvaro
+ * @author alumno
  */
+
 public class test {
-    
     public static void main(String[] args) {
-        // Crear direcciones
-        Direccion d1 = new Direccion("Calle Mayor", 12, "2ºA", "Plasencia");
-        Direccion d2 = new Direccion("Avenida España", 45, "3ºB", "Cáceres");
-        Direccion d3 = new Direccion("Paseo del Prado", 8, "1ºC", "Madrid");
+        System.out.println("📋 Cálculo de sueldos:");
+        Empleado emp1 = new Empleado();
+        Empleado emp2 = new Empleado();
+        Empleado emp3 = new Empleado();
 
-        // Crear empleados
-        Empleado e1 = new Empleado("Lucía Gómez", 1800, d1);
-        Empleado e2 = new Empleado("Carlos Ruiz", 2200, d2);
-        Empleado e3 = new Empleado("Marta Sánchez", 2000, d3);
-
-        // Mostrar datos
-        System.out.println("EMPLEADO 1:");
-        e1.mostrarDatos();
-
-        System.out.println("EMPLEADO 2:");
-        e2.mostrarDatos();
-
-        System.out.println("EMPLEADO 3:");
-        e3.mostrarDatos();
+        System.out.println("\n🧾 Resultados:");
+        emp1.mostrar();
+        emp2.mostrar();
+        emp3.mostrar();
     }
 }
