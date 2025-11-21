@@ -7,27 +7,62 @@
  *
  * @author alumno
  */
-public class empleado {
-    
+
+    public class empleado {
+    //Variables
     private String nombre;
-    private int salario;
-    private direccion direccion;
-    
-
-    public empleado(String nombre, int salario, direccion direccion) {
+    private int horas;
+    private float tarifa;
+   
+    public empleado(){ //Constructor por defecto
+        this.nombre = "";
+        this.horas = 0;
+        this.tarifa = 0;
+    }
+    public empleado(String nombre, int horas, float tarifa){ //Constructor parametrizado
         this.nombre = nombre;
-        this.salario = salario;
-        this.direccion = direccion;
+        this.horas = horas;
+        this.tarifa = tarifa;
     }
-
-    public void mostrarDatos() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Salario: " + salario + " €");
-        System.out.println("Dirección:");
-        System.out.println("   Calle: " + direccion.getCalle());
-        System.out.println("   Número: " + direccion.getNumero());
-        System.out.println("   Piso: " + direccion.getPiso());
-        System.out.println("   Ciudad: " + direccion.getCiudad());
-        System.out.println();
+    //Getters y Setters
+    public String getNombre(){
+        return this.nombre;
     }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+   
+    public int getHoras(){
+        return this.horas;
+    }
+    public void setHoras(int horas){
+        this.horas = horas;
+    }
+   
+    public float getTarifa(){
+        return this.tarifa;
+    }
+    public void setNombre(float tarifa){
+        this.tarifa = tarifa;
+    }
+   
+    //Metodos, para calcular las horas extras
+    public float calcularSueldo(){
+        int horasExtras;
+        if (horas <= 40){
+            return horas*tarifa;
+        }
+        else {
+            horasExtras = horas-40;
+           
+            return (40 * tarifa)+ (horasExtras*tarifa*1.5f);
+        }
+    }
+    //To string
+    @Override
+    public String toString(){
+        return this.nombre +" a hecho: "+this.horas+" ha ganado: "+calcularSueldo();
+    }
+   
 }
+
