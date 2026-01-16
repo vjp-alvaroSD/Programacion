@@ -6,7 +6,7 @@ package com.mycompany.ejercicio9;
 
 /**
  *
- * @author alumno
+ * @author Álvaro
  */
 import java.util.Scanner;
 
